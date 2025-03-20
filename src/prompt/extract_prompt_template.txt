@@ -1,0 +1,45 @@
+I will provide you with a piece of text describing potential blockchain transactions. Please extract all relevant transaction details and output them as an array of JSON objects. Each object should represent **one transaction** and must contain the following fields:
+
+1. "actionType": the transaction type (e.g., "transfer", "mint", "burn", "approve", "swap", "stake"), or "unknown" if not stated.
+2. "chain": the blockchain or network name (e.g., "Ethereum", "BSC", "Polygon"), or "unknown" if not stated.
+3. "fromAddress": the sender’s address, or "unknown" if not stated.
+4. "toAddress": the recipient’s address, or "unknown" if not stated.
+5. "token": the token or asset involved (e.g., "ETH", "USDT", "NFT ID"), or "unknown" if not stated.
+6. "amount": the quantity or amount to be transacted, or "unknown" if not stated.
+7. "notes": any additional comments or descriptions regarding the transaction. Use an empty string "" if there is nothing to add.
+
+### Sample JSON Output
+
+[
+  {
+    "actionType": "transfer",
+    "chain": "Ethereum",
+    "fromAddress": "0x123...",
+    "toAddress": "0xabc...",
+    "token": "USDT",
+    "amount": "100",
+    "notes": ""
+  },
+  {
+    "actionType": "stake",
+    "chain": "Polygon",
+    "fromAddress": "0x111...",
+    "toAddress": "StakingContractAddress",
+    "token": "MATIC",
+    "amount": "50",
+    "notes": "Staking for liquidity mining"
+  }
+]
+
+### Important Instructions
+1. Return your final answer strictly as valid JSON, **without** extra text or explanations.
+2. If no transaction-related activity is found in the text, return an **empty JSON array**: [].
+
+---
+
+**Text to analyze**:  
+"{ user_input }"
+
+---
+
+**Please provide the extracted transactions in the specified JSON format, with no additional text.**

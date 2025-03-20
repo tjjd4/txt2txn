@@ -1,0 +1,9 @@
+# pycache
+__pycache__/
+*.pyc
+
+# Environments variables
+.env
+
+# pyenv
+.python-version
