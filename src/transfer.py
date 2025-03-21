@@ -72,7 +72,7 @@ def convert_transfer_intent(user_input):
         # )
 
         completion = client.chat(
-            model='deepseek-r1', 
+            model='deepseek-r1',
             messages=[
                 system_message,
                 transfer_schema_message,
@@ -83,6 +83,7 @@ def convert_transfer_intent(user_input):
         )
     except Exception as e:
         print(e)
+        return {}
 
     # Extract and interpret the last message from the completion
     filled_schema_text = completion.message.content.strip()
