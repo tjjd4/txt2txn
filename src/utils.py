@@ -21,7 +21,7 @@ def create_open_ai_client():
         )
     else:
         return OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    
+
 def create_ollama_client():
     return Client(
         host='http://localhost:11434',
@@ -73,16 +73,12 @@ def get_token_contracts(transaction_type: Literal["transfer", "swap"]) -> dict:
 
 
 def remove_think_tag_from_deepseek(text: str) -> str:
-    # 找到第一个 <think> 和 </think> 的索引
     start = text.find('<think>')
     end = text.find('</think>')
 
-    # 如果找不到标签，返回原始字符串
     if start == -1 or end == -1:
         return text.strip()
-    
-    # 删去 <think> 标签及其内容
+
     result = text[:start] + text[end + len('</think>'):]
-    
-    # 去除前后空格
+
     return result.strip()
